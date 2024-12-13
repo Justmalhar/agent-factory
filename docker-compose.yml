@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  youtube-generator:
+    build: .
+    container_name: youtube-generator
+    ports:
+      - "8501:8501"
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONPATH=/app
+    restart: unless-stopped 
